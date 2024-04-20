@@ -366,7 +366,7 @@ a {
 }
 
 .btn:hover {
-    opacity: 0.75;
+    background-color: #999999;
 }
 
 
