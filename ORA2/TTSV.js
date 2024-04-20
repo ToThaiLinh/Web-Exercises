@@ -46,7 +46,7 @@ function createBG() {
 }
 createBG();
 
-var srcImage_new;
+var srcImage_new = TTSV_new.srcImage;
 function chooseFile(fileInput) {
     if(fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
@@ -113,6 +113,8 @@ function editInfor() {
     document.getElementById("Lop").innerHTML = `<input type="text" id="editLop" name="editLop" value="${TTSV_new.studentLop}" />`;
     document.getElementById("KhoaHoc").innerHTML = `<input type="text" id="editKhoaHoc" name="editKhoaHoc" value="${TTSV_new.studentKhoaHoc}" />`;
     document.getElementById("Email").innerHTML = `<input type="text" id="editEmail" name="editEmail" value="${TTSV_new.studentEmail}" />`;
+    document.getElementById("fileInput").value = "";
+    srcImage_new = TTSV_new.srcImage;
 }
 
 function functionOK() {
