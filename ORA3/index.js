@@ -45,7 +45,7 @@ function addGroup() {
     btnDelete.style.marginLeft = '5px';
     newGroup.appendChild(btnDelete);
     btnDelete.innerHTML = `
-    <i class='ti-trash'></i>
+    <img src='./Contents/Images/thungrac.png'>
     `;
     btnDelete.addEventListener('click', function() {
       var confirmDelete = confirm(`(${hoten} - ${MSSV}): Bạn có chắc chắn muốn xóa group này?`);
@@ -137,7 +137,7 @@ function addItem(group) {
 
   //Tao nut delete
   var btnDelete = document.createElement('button');
-  btnDelete.innerHTML = `<i class='ti-trash'></i>`;
+  btnDelete.innerHTML = `<img src='./Contents/Images/thungrac.png'>`;
   Object.assign(btnDelete.style, {
     marginLeft: '10px'
   });
@@ -159,5 +159,21 @@ var firstNode = addGroup();
 root.appendChild(firstNode);
 
 document.getElementById('btnPDF').addEventListener('click', function() {
-  window.print();
-});
+    const body = $('.MainContent')[0];
+    html2canvas(body, {
+        useCORS: true,
+        allowTaint: true,
+        onrendered: function (canvas) {
+            let data = canvas.toDataURL();
+            let docDefinition = {
+                content: [{
+                    image: data,
+                    width: 505
+                }]
+            };
+            pdfMake.createPdf(docDefinition).download("Tô Thái Linh - 20215414.pdf");
+        }
+    });
+}
+
+);
