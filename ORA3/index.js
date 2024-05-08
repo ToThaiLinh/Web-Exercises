@@ -120,19 +120,28 @@ function addItem(group) {
   infoItem.appendChild(item);
 
   //Tạo input text
-  var inputText = document.createElement('span');
-  inputText.innerText = `Info value (Double click để sửa)`;
-  Object.assign(inputText.style, {
-    fontFamily: 'Time New Roman',
-    fontSize: '18px',
-    fontWeight: 'normal',
-    marginLeft: '30px',
-    marginBottom: '10px',
-    display: 'inline-block'
-  });
-  inputText.addEventListener('dblclick', function() {
-    this.contentEditable = true;
-  });
+  var type = prompt("Bạn muốn dữ liệu nhập vào là:\nText/Check/Radio", "");
+  type = type.toUpperCase();
+  var inputText;
+  if(type.indexOf('CHECK') != -1) {
+      type = 'checkbox';
+  }
+  else if(type.indexOf('RADIO') != -1) {
+      type = 'radio';
+  }
+  else {
+    type = 'text';
+  }
+    var inputText = document.createElement('input');
+    inputText.setAttribute('type', type);
+    Object.assign(inputText.style, {
+      fontFamily: 'Time New Roman',
+      fontSize: '18px',
+      fontWeight: 'normal',
+      marginLeft: '30px',
+      marginBottom: '10px',
+      display: 'inline-block'
+    });
   infoItem.appendChild(inputText);
 
   //Tao nut delete
