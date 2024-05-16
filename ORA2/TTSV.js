@@ -1,4 +1,4 @@
-const TTSV_default = {
+var TTSV_default = {
     studentHoTen : "Tô Thái Linh", 
     studentEmail : "linh.tt215414@sis.hust.edu.vn",
     studentKhoa : "Trường Công nghệ thông tin và Truyền thông",
@@ -13,7 +13,7 @@ const TTSV_default = {
     srcImage: "./Contents/Images/person.png"
 }
 
-const TTSV_new = {
+var TTSV_new = {
     studentHoTen : "Tô Thái Linh", 
     studentEmail : "linh.tt215414@sis.hust.edu.vn",
     studentKhoa : "Trường Công nghệ thông tin và Truyền thông",
@@ -103,7 +103,7 @@ function editInfor() {
     document.getElementById("GioiTinh").innerHTML = 
     `<form style="font-weight: normal !important;">
     <input type="radio" id="nam" name="gioi_tinh" value="Nam">
-    <label for="nam" style="margin-right: 10px;">Name</label>
+    <label for="nam" style="margin-right: 10px;">Nam</label>
     <input type="radio" id="nu" name="gioi_tinh" value="Nữ">
     <label for="nu" style="margin-right: 10px;">Nữ</label>
     <input type="radio" id="khac" name="gioi_tinh" value="Khác">
